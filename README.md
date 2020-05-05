@@ -7,6 +7,18 @@ GitIgnore is a simple tool to auto-import the `.gitignore` files for various lan
 > Add sample usage here
 > BOTH (1) as a cli tool (via Docker) and (2) via Elixir code execution.
 
+```sh
+$ mix escript.build
+
+# --output defaults to `.gitignore`
+$ ./gitinore ruby python node --output .gitignore
+
+Fetching .gitinore file for: ruby
+Fetching .gitinore file for: python
+Fetching .gitinore file for: node
+DONE writing .gitignore rules to output: .gitignore
+```
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
