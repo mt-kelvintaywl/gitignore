@@ -19,6 +19,13 @@ defmodule GitIgnore.CLI do
     {opts, languages}
   end
 
+  defp response({_opts, []}) do
+    IO.puts(
+      IO.ANSI.yellow() <>
+        "Please select language or framework to fetch (e.g, `ruby`)" <> IO.ANSI.reset()
+    )
+  end
+
   defp response({opts, languages}) do
     output_path =
       opts
