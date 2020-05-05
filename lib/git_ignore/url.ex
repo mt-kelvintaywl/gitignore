@@ -1,6 +1,15 @@
 defmodule GitIgnore.URL do
+  @moduledoc """
+  Module responsible for the fetching of the GitHub
+  `.gitignore` files over HTTP.
+  """
+
   @base_url "https://raw.githubusercontent.com/github/gitignore/master/"
 
+  @doc """
+  Fetches the raw content (String) of the corresponding GitHub `.gitignore` file
+  based on requested language or framework.
+  """
   def fetch(language) do
     language
     |> path
@@ -8,6 +17,9 @@ defmodule GitIgnore.URL do
     |> body
   end
 
+  @doc """
+  Determines the absolute URL to fetch the `.gitignore` file over GitHub.
+  """
   def path(language) do
     language
     |> String.capitalize()
@@ -21,6 +33,7 @@ defmodule GitIgnore.URL do
   defp body({:ok, response}) do
     case response.status_code() do
       200 -> response.body()
+      # e.g., 404
       _ -> ""
     end
   end
