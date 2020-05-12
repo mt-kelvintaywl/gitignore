@@ -11,11 +11,11 @@ GitIgnore is a simple tool to auto-import the `.gitignore` files for various lan
 $ mix escript.build
 
 # --output defaults to `.gitignore`
-$ ./gitinore ruby python node --output .gitignore
+$ ./gitignore ruby python node --output .gitignore
 
-Fetching .gitinore file for: ruby
-Fetching .gitinore file for: python
-Fetching .gitinore file for: node
+Fetching .gitignore file for: ruby
+Fetching .gitignore file for: python
+Fetching .gitignore file for: node
 DONE writing .gitignore rules to output: .gitignore
 ```
 

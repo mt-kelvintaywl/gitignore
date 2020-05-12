@@ -31,7 +31,7 @@ defmodule GitIgnore.Task do
 
   """
   def fetch(language) do
-    IO.puts("Fetching .gitinore file for: #{language}")
+    IO.puts("Fetching .gitignore file for: #{language}")
     content = GitIgnore.URL.fetch(language)
 
     if String.length(content) == 0, do: "", else: "\#\s#{language}\n\n#{content}"
